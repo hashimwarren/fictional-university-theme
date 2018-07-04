@@ -1,12 +1,14 @@
 <?php
 
-$names = array("Hashim", "Alex", "Madison", "Moses");
+$names = array("Hashim", "Alex", "Madison", "Moses", "Marilyn");
 
-$count = 1;
-while ($count < 100) {
-    echo "<li>$count</li>";
+$count = 0;
+
+while ($count < count($names)) {
+    echo "<li>Hi my name is $names[$count]</li>";
     $count++;
 }
+
 ?>
 
 <p>Hi, my name is <?php echo $names[0]; ?> and I like candy</p>

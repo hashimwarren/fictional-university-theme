@@ -12,6 +12,7 @@ function university_files() { //create a new function that will pull files
 add_action( 'wp_enqueue_scripts', 'university_files' ); //call the function when the script runs
 
 function university_features() {
+    register_nav_menu( 'headerMenuLocation', 'Header Menu Location'); //create menu options
     add_theme_support('title-tag'); //give wordpress control of the title tag
 }
 

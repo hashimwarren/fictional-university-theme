@@ -17,5 +17,22 @@ function university_features() {
 
 add_action('after_setup_theme', 'university_features' );
 
+/*
+* dynamically populate email field with author's email
 
+add_filter( 'gform_field_value_bork', 'populate_event_email');
+function populate_event_email() {
+    global $post;
+    $blah = $post->ID;
+
+    $listSingleChildEvent = toolset_get_related_post(
+        $blah,
+        'page-events',
+        'child'
+      );
+
+    return get_post_meta($listSingleChildEvent, 'wpcf-Email_Address', true);
+
+}
+*/
 ?>

@@ -57,6 +57,35 @@ while(have_posts()){
       <?php } ?>
 
     <div class="generic-content">
+
+    <?php
+/*
+    $listChildEvents = toolset_get_related_posts(
+      get_the_ID(), // get id
+      'page-events', //relationship slug
+      'parent', // query by role name
+      100, //limit returned results
+      0, // offset
+      array(), // additional arguments
+      'post_id', // return type
+      'child', // role name to return
+      null, // null means no ordering
+      ASC, // order by
+      true, // should we count rows?
+      $hanif // variable name for found rows
+    );
+    echo $hanif;
+    echo $listChildEvents;
+*/
+
+    $listSingleChildEvent = toolset_get_related_post(
+      get_the_ID(),
+      'page-events',
+      'child'
+    );
+
+    echo get_post_meta($listSingleChildEvent, 'post_author', true);
+    ?>
       <?php the_content(); ?>
     </div>
 
